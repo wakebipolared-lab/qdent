@@ -1313,8 +1313,7 @@ function AppointmentSection() {
     const next: Partial<AppointmentFormState> = {}
     if (!form.name.trim()) next.name = "Please enter your full name."
     if (!form.phone.trim()) next.phone = "Please enter a phone number."
-    if (!form.email.trim() || !/^\S+@\S+\.\S+$/.test(form.email))
-      next.email = "Please enter a valid email address."
+    if (!form.email.trim()) next.email = "Please enter an email address."
     if (!form.date) next.date = "Please select a preferred date."
     if (!form.service) next.service = "Please select a service."
     setErrors(next)
@@ -1432,7 +1431,7 @@ function AppointmentSection() {
                     onChange={(e) => update("name", e.target.value)}
                     placeholder="Jana Nováková"
                     aria-invalid={!!errors.name}
-                    className="h-11 rounded-[10px]"
+                    className="h-11 rounded-[10px] bg-white text-[#12253A] caret-[#009182] placeholder:text-[#7A8891]"
                   />
                   {errors.name && (
                     <p className="font-body text-xs text-red-600">{errors.name}</p>
@@ -1450,7 +1449,7 @@ function AppointmentSection() {
                     onChange={(e) => update("phone", e.target.value)}
                     placeholder="+421 900 000 000"
                     aria-invalid={!!errors.phone}
-                    className="h-11 rounded-[10px]"
+                    className="h-11 rounded-[10px] bg-white text-[#12253A] caret-[#009182] placeholder:text-[#7A8891]"
                   />
                   {errors.phone && (
                     <p className="font-body text-xs text-red-600">{errors.phone}</p>
@@ -1464,12 +1463,14 @@ function AppointmentSection() {
                 </Label>
                 <Input
                   id="qdent-email"
-                  type="email"
+                  type="text"
+                  inputMode="email"
+                  autoComplete="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
                   placeholder="jana@example.com"
                   aria-invalid={!!errors.email}
-                  className="h-11 rounded-[10px]"
+                  className="h-11 rounded-[10px] bg-white text-[#12253A] caret-[#009182] placeholder:text-[#7A8891]"
                 />
                 {errors.email && (
                   <p className="font-body text-xs text-red-600">{errors.email}</p>
@@ -1487,7 +1488,7 @@ function AppointmentSection() {
                     value={form.date}
                     onChange={(e) => update("date", e.target.value)}
                     aria-invalid={!!errors.date}
-                    className="h-11 rounded-[10px]"
+                    className="h-11 rounded-[10px] bg-white text-[#12253A] caret-[#009182] placeholder:text-[#7A8891]"
                   />
                   {errors.date && (
                     <p className="font-body text-xs text-red-600">{errors.date}</p>
@@ -1502,7 +1503,10 @@ function AppointmentSection() {
                     value={form.service}
                     onValueChange={(v) => update("service", v)}
                   >
-                    <SelectTrigger id="qdent-service" className="h-11 rounded-[10px]">
+                    <SelectTrigger
+                      id="qdent-service"
+                      className="h-11 rounded-[10px] bg-white text-[#12253A] data-[placeholder]:text-[#7A8891]"
+                    >
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -1528,7 +1532,7 @@ function AppointmentSection() {
                   value={form.note}
                   onChange={(e) => update("note", e.target.value)}
                   placeholder="Tell us anything that might help us prepare for your visit."
-                  className="min-h-[88px] rounded-[10px]"
+                  className="min-h-[88px] rounded-[10px] bg-white text-[#12253A] caret-[#009182] placeholder:text-[#7A8891]"
                 />
               </div>
 
