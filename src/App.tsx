@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   Menu,
   X,
@@ -10,6 +10,7 @@ import {
   MapPin,
   Clock,
   ArrowRight,
+  ArrowLeft,
   ArrowUpRight,
   Star,
   Award,
@@ -1550,6 +1551,16 @@ function AppointmentSection() {
                   "Request appointment"
                 )}
               </Button>
+              <p className="text-center font-body text-xs leading-relaxed text-[#5F6F79]">
+                Odoslaním formulára súhlasíte so spracovaním osobných údajov podľa{" "}
+                <a
+                  href="/privacy"
+                  className="font-semibold text-[#009182] underline-offset-2 hover:underline"
+                >
+                  zásad ochrany osobných údajov
+                </a>
+                .
+              </p>
             </form>
           )}
         </div>
@@ -1742,14 +1753,124 @@ function SiteFooter() {
              © {year} Qdent. {t("All rights reserved.")}
           </p>
           <a
-            href="#privacy"
+            href="/privacy"
             className="font-body text-xs text-white/50 transition-colors duration-200 hover:text-white"
           >
-            Privacy policy
+            Ochrana osobných údajov
           </a>
         </div>
       </div>
     </footer>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* Privacy policy                                                       */
+/* ------------------------------------------------------------------ */
+
+function PrivacyPolicyPage() {
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = "Ochrana osobných údajov | Qdent"
+    return () => {
+      document.title = previousTitle
+    }
+  }, [])
+
+  return (
+    <div className="min-h-screen bg-[#F7FAFA] font-body text-[#12253A]">
+      <FontLoader />
+      <header className="border-b border-[#12253A]/10 bg-[#12253A] text-white">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+          <a href="/" aria-label="Qdent — domov" className="inline-flex rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58d8cc]">
+            <img src={qdentLogo} alt="Qdent" className="h-10 w-auto" />
+          </a>
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 rounded-[10px] border border-white/20 px-4 py-2 font-body text-sm font-semibold transition-colors hover:border-[#58d8cc] hover:text-[#58d8cc]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Späť na stránku
+          </a>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <article className="rounded-[20px] border border-[#12253A]/10 bg-white p-6 shadow-sm sm:p-10 lg:p-12">
+          <div className="max-w-3xl">
+            <Badge className="mb-4 rounded-full bg-[#009182]/10 px-3 py-1 text-[#00786d] hover:bg-[#009182]/10">
+              Qdent
+            </Badge>
+            <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+              Ochrana osobných údajov
+            </h1>
+            <p className="mt-5 text-base leading-7 text-[#5F6F79]">
+              Ochranu osobných údajov berieme vážne a je pre nás dôležité, aby vaše osobné údaje boli v bezpečí. Všetky osobné údaje, ktoré sú získavané počas vašej návštevy na našich stránkach sú spracovávané v súlade so zákonom č. 122/2013 Z.z. (ďalej len „zákon o ochrane osobných údajov“). Dobrovoľným vyplnením vašich osobných údajov nám týmto dávate súhlas s ich spracovaním v súlade so zákonom o ochrane osobných údajov.
+            </p>
+          </div>
+
+          <div className="mt-10 max-w-3xl space-y-10 text-[15px] leading-7 text-[#44545F]">
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Aké údaje uchovávame?</h2>
+              <p className="mt-3">Počas vašej návštevy stránok ALICA PLUS, s.r.o. zaznamenávame IP adresu, ktorú vám pridelil váš poskytovateľ internetu, z akých stránok ste navštívili našu stránku, ako dlho ste na našej stránke, ktoré konkrétne podstránky si prezeráte a pod. Tieto informácie nie sú považované za osobné a ani nie sú prepojené s vašimi osobnými údajmi.</p>
+              <p className="mt-3">Vaše osobné údaje zadávate dobrovoľne do rôznych formulárov na našich stránkach: registračné formuláre, komentáre, recenzie. Najčastejšie uchovávame tieto osobné údaje: meno, email. Ak chcete vedieť, ktoré konkrétne údaje uchovávame k vašej osobe, radi vám ich na požiadanie poskytneme písomne. Pokiaľ by i napriek našej snahe o aktuálnosť údajov boli niektoré záznamy nesprávne, radi ich opravíme.</p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Cookies</h2>
+              <p className="mt-3">Používame cookies v spolupráci s našim reklamným partnerom Google Inc. k tomu, aby sme zistili preferencie návštevníkov web stránok a vedeli na základe toho prispôsobiť našu ponuku na mieru konkrétnemu návštevníkovi. Cookies sa môžu používať k tomu, aby sme zistili, či už ste naše stránky z vášho počítača niekedy navštívili. Cookies sú textové súbory, ktoré uloží váš internetový prehliadač na váš disk v počítači. Ak si neprajete cookies ukladať, môžete ich deaktivovať vo vašom internetovom prehliadači.</p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Na čo tieto informácie používame?</h2>
+              <p className="mt-3">Informácie, ktoré spracovávame môžu byť použité na niektorú z nižšie uvedených činností:</p>
+              <ul className="mt-3 list-disc space-y-2 pl-5 marker:text-[#009182]">
+                <li><strong className="text-[#12253A]">Personalizovanie reklamy</strong> – vaše informácie nám pomáhajú prispôsobiť reklamy vašim individuálnym potrebám.</li>
+                <li><strong className="text-[#12253A]">Zlepšenie web stránky</strong> – pravidelne vylepšujeme našu web stránku na základe informácií a spätnej väzby, ktorú nám dávate.</li>
+                <li><strong className="text-[#12253A]">Na odosielanie emailov</strong> – emailová adresa, ktorú ste zadali na našich stránkach môže byť použitá na odosielanie noviniek, rád, tipov a trikov, informácie o pripravovaných akciách, atď. Ak sa budete chcieť kedykoľvek odhlásiť z odoberania emailov, stačí, ak kliknete na odhlasovací odkaz, ktorý je umiestnený v emaily, alebo nám napíšte a my vás odhlásime.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Ste v bezpečí</h2>
+              <p className="mt-3">Je pre nás prvoradé, aby vaše osobné údaje boli v bezpečí. Implementovali sme rôzne bezpečnostné systémy na ochranu údajov. S vylepšovaním technológií vylepšujeme aj tieto bezpečnostné systémy.</p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Odkazy tretích strán</h2>
+              <p className="mt-3">Niekedy na našich stránkach odkazujeme na služby a produkty tretích strán. Webstránky týchto tretích strán majú vlastné podmienky ochrany osobných údajov a sú nezávislé na našich. Z toho dôvodu nenesieme žiadnu právnu zodpovednosť za obsah a aktivity týchto tretích strán. I napriek tomu je našou snahou udržať vysokú úroveň bezpečnosti. Preto, ak máte akékoľvek podozrenie na nekalé chovanie týchto tretích strán, kontaktujte nás na e-mailovej adrese <a href="mailto:ordinacia@qdent.sk" className="font-semibold text-[#009182] hover:underline">ordinacia@qdent.sk</a>.</p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Neposkytujeme vaše údaje tretím stranám</h2>
+              <p className="mt-3">Nepredávame, neobchodujeme ani žiadnym iným spôsobom neposkytujeme vaše osobné údaje tretím stranám. Odovzdanie vašich osobných údajov štátnym organizáciám je len na základe riadne vystavených a právoplatných právnych rozhodnutí v súlade so zákonom Slovenskej republiky.</p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Zmeny v podmienkach o ochrane osobných údajov</h2>
+              <p className="mt-3">Ak sa rozhodneme zmeniť podmienky o ochrane osobných údajov, uverejníme ich na tejto stránke.</p>
+              <p className="mt-3 font-semibold text-[#12253A]">Tieto podmienky sú platné od 01.07.2023.</p>
+            </section>
+
+            <section className="rounded-[16px] bg-[#009182]/8 p-5 sm:p-6">
+              <h2 className="font-heading text-xl font-semibold text-[#12253A]">Kontaktujte nás</h2>
+              <p className="mt-3">Ak máte akékoľvek otázky alebo podnety, napíšte nám.</p>
+              <address className="mt-4 not-italic text-[#12253A]">
+                <strong>ALICA PLUS, s.r.o.</strong><br />
+                Gorkého 1<br />
+                811 01 Bratislava – mestská časť Staré Mesto<br />
+                Slovenská republika<br />
+                <a href="mailto:ordinacia@qdent.sk" className="mt-2 inline-block font-semibold text-[#009182] hover:underline">ordinacia@qdent.sk</a>
+              </address>
+            </section>
+          </div>
+        </article>
+      </main>
+
+      <footer className="border-t border-white/10 bg-[#12253A] py-8 text-center text-sm text-white/60">
+        © {new Date().getFullYear()} Qdent. Všetky práva vyhradené.
+      </footer>
+    </div>
   )
 }
 
@@ -1781,7 +1902,15 @@ function QdentHomepage() {
   )
 }
 
-export default QdentHomepage
+function QdentApp() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/"
+  if (path === "/privacy" || path === "/ochrana-osobnych-udajov") {
+    return <PrivacyPolicyPage />
+  }
+  return <QdentHomepage />
+}
+
+export default QdentApp
 
 
 
