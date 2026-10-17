@@ -1,0 +1,12 @@
+{
+  "cloudName": "ggfi6i92",
+  "assets": {
+    "qdent/services/digital-diagnostics": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232730/qdent/services/digital-diagnostics.jpg",
+    "qdent/services/prosthetics": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232727/qdent/services/prosthetics.jpg",
+    "qdent/services/surgery": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232928/qdent/services/surgery.jpg",
+    "qdent/team/barbora": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232913/qdent/team/barbora.jpg",
+    "qdent/team/tamara": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232922/qdent/team/tamara.jpg",
+    "qdent/team/vitaliy": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232221/qdent/team/vitaliy.jpg",
+    "qdent/team/vlada": "https://res.cloudinary.com/ggfi6i92/image/upload/v1791232917/qdent/team/vlada.jpg"
+  }
+}

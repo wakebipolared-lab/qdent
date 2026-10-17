@@ -1,0 +1,85 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Node / Vite ###
+node_modules/
+dist/
+*.log
+npm-debug.log*
+
+### Environment variables (templates stay tracked) ###
+.env
+.env.*
+!.env.example
+
+### Local tooling / archives ###
+.idea/
+.agents/
+*.zip
+.netlify/
+.netlify-zip-check/
+.netlify-rollback-test/
+.netlify-permission-check-*/
+
+### Build and TypeScript caches ###
+*.tsbuildinfo
+
+### Generated deliverables and local audit files ###
+outputs/
+*.diff
+MODIFIED_FILE
+DIFF_FILE
+VERIFICATION.txt
+ROLLBACK.sh
+ORIGINAL_*
+rollback-*
+.rollback-*
+.*-original.sha256
+.*-modified.sha256
+.baseline-*-hash.txt
+.rendered-*.html
+.empty-tabs
+
+### Local screenshots and source-photo candidates ###
+preview*.png
+i18n-*.png
+toothbrush-preview.png
+assets/patient-candidates/
+
+### Legacy local exports ###
+qdent_current.html
+qdent.iml
+/assets/
+/script.js
+/styles.css
+/optimize-project.ps1
+*.bak
+/src/Main.java
