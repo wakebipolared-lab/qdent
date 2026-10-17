@@ -1332,16 +1332,29 @@ function AppointmentSection() {
     setStatus("loading")
 
     try {
+      const enteredEmail = form.email.trim()
+      const backendEmail = /^\S+@\S+\.\S+$/.test(enteredEmail)
+        ? enteredEmail
+        : `website-lead-${Date.now()}@qdent.invalid`
+      const note = form.note.trim()
+      const backendNote =
+        backendEmail === enteredEmail
+          ? note
+          : [`E-mail entered on the website: ${enteredEmail}`, note]
+              .filter(Boolean)
+              .join("\n")
+
       const response = await fetch(APPOINTMENT_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
         body: new URLSearchParams({
           name: form.name.trim(),
           phone: form.phone.trim(),
-          email: form.email.trim(),
+          email: backendEmail,
+          originalEmail: enteredEmail,
           preferredDate: form.date,
           service: form.service,
-          note: form.note.trim(),
+          note: backendNote,
           source: "Qdent website",
         }),
       })
