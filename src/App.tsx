@@ -67,8 +67,9 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
-import qdentLogo from "../assets/logo-web.svg"
 import { localeLabels, locales, useI18n } from "./i18n"
+
+const qdentLogo = "/assets/logo-web.svg"
 
 /* ------------------------------------------------------------------ */
 /* Fonts                                                                */
