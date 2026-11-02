@@ -68,6 +68,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
 import { localeLabels, locales, useI18n } from "./i18n"
+import { findSeoPage, SeoPage } from "./SeoPage"
+import seo from "./seo-content.json"
 
 const qdentLogo = "/assets/logo-web.svg"
 
@@ -114,6 +116,8 @@ interface TechItem {
 }
 
 interface TeamMember {
+  anchorId?: string
+  profileKey?: string
   name: string
   role: string
   description: string
@@ -194,31 +198,31 @@ const SERVICES: ServiceItem[] = [
   {
     title: "Prosthetics",
     description: "Crowns, bridges and dentures crafted for natural comfort and a confident bite.",
-    image: "/assets/prosthetics-hq.webp",
+    image: "/assets/prosthetics-v2-hq.webp",
     icon: <Smile className="h-5 w-5" />,
   },
   {
     title: "Restorative dentistry",
     description: "Precise fillings and repairs that preserve healthy tooth structure.",
-    image: "/assets/restorative-hq.webp",
+    image: "/assets/restorative-v2-hq.webp",
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
     title: "Dental surgery",
     description: "Extractions and implant placement performed with gentle, careful technique.",
-    image: cloudinaryImage("qdent/services/surgery", "/assets/surgery-clinic-hq.webp"),
+    image: "/assets/surgery-v2-hq.webp",
     icon: <Syringe className="h-5 w-5" />,
   },
   {
     title: "Endodontics",
     description: "Root canal treatment focused on saving your natural tooth, pain-free.",
-    image: "/assets/endodontics-hq.webp",
+    image: "/assets/endodontics-v2-hq.webp",
     icon: <Activity className="h-5 w-5" />,
   },
   {
     title: "Digital diagnostics",
     description: "An intraoral scanner, microscope, 3D CBCT and digital X-rays give us an accurate, complete picture.",
-    image: "/assets/digital-diagnostics-hq.webp",
+    image: "/assets/digital-diagnostics-v2-hq.webp",
     icon: <Microscope className="h-5 w-5" />,
   },
 ]
@@ -253,34 +257,45 @@ const TECH_ITEMS: TechItem[] = [
 const TEAM: TeamMember[] = [
   {
     name: "Владислав Семенченко",
+    profileKey: "vladyslav-semenchenko",
     role: "Ассистент врача и администратор",
     description: "Помогает врачу, координирует работу клиники и остаётся на связи с пациентами 24/7.",
     image: "/assets/vladyslav-semenchenko-hq.webp",
   },
   {
-    name: "Виталий",
+    name: "Dr. Vitalii Kozachyshyn",
+    profileKey: "vitalii-kozachyshyn",
     role: "Врач-хирург",
     description: "Проводит хирургическое лечение точно, бережно и с вниманием к деталям.",
-    image: cloudinaryImage("qdent/team/vitaliy", "/assets/vitalij-centered-hq.webp"),
+    image: "/assets/vitaliy-hq.webp",
     imagePosition: "center",
   },
   {
+    anchorId: "barbora-pridavkova",
+    profileKey: "barbora-pridavkova",
     name: "MDDr. Barbora Prídavková",
     role: "Врач-терапевт",
     description: "Восстанавливает здоровье зубов и составляет понятный план лечения.",
-    image: cloudinaryImage("qdent/team/barbora", "/assets/doctor.jpg"),
+    image: "/assets/barbora-hq.webp",
+  },
+  {
+    name: "Лиза",
+    role: "Ассистент",
+    description: "Помогает врачу и сопровождает пациента на всех этапах лечения.",
+    image: "/assets/vlada-hq.webp",
   },
   {
     name: "Влада",
     role: "Ассистент",
     description: "Помогает врачу и сопровождает пациента на всех этапах лечения.",
-    image: cloudinaryImage("qdent/team/vlada", "/assets/assistant.jpg"),
+    image: "/assets/vlada-assistant-hq.webp",
+    imagePosition: "58% center",
   },
   {
     name: "Тамара",
     role: "Ассистент и специалист по гигиене",
     description: "Ассистирует врачу и проводит профессиональную гигиену полости рта.",
-    image: cloudinaryImage("qdent/team/tamara", "/assets/assistant.jpg"),
+    image: "/assets/tamara-hq.webp",
   },
 ]
 
@@ -850,7 +865,7 @@ function AboutSection() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[16px] shadow-lg sm:aspect-[5/6]">
               <img
-                src="/assets/clinic-hq.webp"
+                src="/assets/vladyslav-semenchenko-hq.webp"
                 alt="Dentist explaining treatment plan to a patient at Qdent clinic"
                 loading="lazy"
                 className="h-full w-full object-cover"
@@ -915,7 +930,7 @@ function TechnologySection() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[16px] shadow-lg">
             <img
-              src="/assets/digital-diagnostics-hq.webp"
+              src="/assets/digital-diagnostics-v2-hq.webp"
               alt="Advanced digital diagnostic equipment used at Qdent"
               loading="lazy"
               className="h-full w-full object-cover"
@@ -967,7 +982,17 @@ function TechnologySection() {
 /* ------------------------------------------------------------------ */
 
 function DoctorsSection() {
-  const { t } = useI18n()
+  const { locale, t } = useI18n()
+
+  React.useEffect(() => {
+    if (window.location.hash !== "#barbora-pridavkova") return
+    window.requestAnimationFrame(() => {
+      document.getElementById("barbora-pridavkova")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      })
+    })
+  }, [])
 
   return (
     <section id="team" className="scroll-mt-24 bg-white py-20 sm:py-28">
@@ -985,11 +1010,12 @@ function DoctorsSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {TEAM.map((member, index) => (
             <article
+              id={member.anchorId}
               key={`${member.name}-${index}`}
-              className="group overflow-hidden rounded-[16px] border border-border/70 bg-white shadow-sm transition-all duration-200 hover:shadow-lg"
+              className="group scroll-mt-28 overflow-hidden rounded-[16px] border border-border/70 bg-white shadow-sm transition-all duration-200 hover:shadow-lg"
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden">
                 <img
@@ -1005,7 +1031,11 @@ function DoctorsSection() {
               </div>
               <div className="p-6">
                 <h3 className="font-heading text-lg font-semibold text-[#12253A]">
-                  {t(member.name)}
+                  {member.profileKey ? (
+                    <a className="hover:text-[#009182] hover:underline" href={seo.pages.find((page) => page.locale === locale && page.kind === "profile" && page.key === member.profileKey)?.path}>
+                      {t(member.name)}
+                    </a>
+                  ) : t(member.name)}
                 </h3>
                 <p className="mt-1 font-body text-sm font-medium text-[#009182]">
                   {t(member.role)}
@@ -1884,6 +1914,8 @@ function PrivacyPolicyPage() {
 /* ------------------------------------------------------------------ */
 
 function QdentHomepage() {
+  const { locale } = useI18n()
+  const seoLinks = seo.pages.filter((page) => page.locale === locale && (page.kind === "service" || page.kind === "profile"))
   return (
     <div className="font-body min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <FontLoader />
@@ -1901,6 +1933,18 @@ function QdentHomepage() {
         <ReviewsSection />
         <AppointmentSection />
         <ContactSection />
+        <section aria-labelledby="explore-qdent" className="border-t border-[#DDE8E6] bg-[#F7FAF9] py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 id="explore-qdent" className="font-heading text-2xl font-bold text-[#12253A]">{seo.languages[locale].servicesLabel}</h2>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {seoLinks.map((page) => (
+                <a key={page.path} href={page.path} className="rounded-xl border border-[#DDE8E6] bg-white p-4 font-body text-sm font-semibold text-[#12253A] transition-colors hover:border-[#009182] hover:text-[#009182]">
+                  {page.h1}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
@@ -1909,6 +1953,10 @@ function QdentHomepage() {
 
 function QdentApp() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/"
+  const seoPage = findSeoPage(path)
+  if (seoPage && seoPage.kind !== "home") {
+    return <SeoPage page={seoPage} />
+  }
   if (path === "/privacy" || path === "/ochrana-osobnych-udajov") {
     return <PrivacyPolicyPage />
   }
@@ -1916,6 +1964,4 @@ function QdentApp() {
 }
 
 export default QdentApp
-
-
 

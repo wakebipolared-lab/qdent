@@ -8,10 +8,11 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/generate-seo.mjs && tsc -b && vite build && node scripts/generate-seo.mjs --dist",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc -b --pretty false",
-    "i18n:check": "node scripts/validate-translations.mjs"
+    "i18n:check": "node scripts/validate-translations.mjs",
+    "seo:check": "node scripts/validate-seo.mjs"
     ,"cloudinary:upload": "node scripts/upload-cloudinary-assets.mjs"
   },
   "dependencies": {

@@ -4,6 +4,7 @@ import sk from "../messages/sk.json"
 import de from "../messages/de.json"
 import ru from "../messages/ru.json"
 import ukr from "../messages/ukr.json"
+import seo from "./seo-content.json"
 
 export const locales = ["sk", "en", "de", "ru", "ukr"] as const
 export type Locale = (typeof locales)[number]
@@ -68,8 +69,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     document.documentElement.lang = htmlLanguage[locale]
     document.documentElement.dataset.locale = locale
-    const title = t("Qdent | Modern dental clinic in Bratislava")
-    const description = t("Modern dental care in Bratislava with precise diagnostics, transparent treatment and a personal approach.")
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/"
+    const seoPage = seo.pages.find((page) => page.path === currentPath)
+    const title = seoPage?.title ?? t("Qdent | Modern dental clinic in Bratislava")
+    const description = seoPage?.description ?? t("Modern dental care in Bratislava with precise diagnostics, transparent treatment and a personal approach.")
     document.title = title
     const setMeta = (selector: string, attribute: string, value: string) => {
       let element = document.head.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null
@@ -85,16 +88,29 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     setMeta('meta[property="og:title"]', "content", title)
     setMeta('meta[property="og:description"]', "content", description)
     setMeta('meta[property="og:locale"]', "content", htmlLanguage[locale])
-    setMeta('link[rel="canonical"]', "href", `${window.location.origin}${window.location.pathname}`)
+    setMeta('meta[property="og:type"]', "content", seoPage?.kind === "profile" ? "profile" : "website")
+    setMeta('meta[property="og:url"]', "content", `${seo.siteUrl}${seoPage?.path ?? window.location.pathname}`)
+    setMeta('meta[name="twitter:card"]', "content", "summary_large_image")
+    setMeta('meta[name="twitter:title"]', "content", title)
+    setMeta('meta[name="twitter:description"]', "content", description)
+    setMeta('link[rel="canonical"]', "href", `${seo.siteUrl}${seoPage?.path ?? window.location.pathname}`)
     document.head.querySelectorAll('link[rel="alternate"][data-qdent-i18n]').forEach((node) => node.remove())
     locales.forEach((alternate) => {
       const link = document.createElement("link")
       link.rel = "alternate"
       link.hreflang = htmlLanguage[alternate]
-      link.href = `${window.location.origin}${localizedPath(alternate).split(/[?#]/)[0]}`
+      const equivalent = seoPage && seo.pages.find((page) => page.locale === alternate && page.kind === seoPage.kind && page.key === seoPage.key)
+      link.href = `${seo.siteUrl}${equivalent?.path ?? localizedPath(alternate).split(/[?#]/)[0]}`
       link.dataset.qdentI18n = "true"
       document.head.appendChild(link)
     })
+    const fallback = document.createElement("link")
+    fallback.rel = "alternate"
+    fallback.hreflang = "x-default"
+    const defaultEquivalent = seoPage && seo.pages.find((page) => page.locale === defaultLocale && page.kind === seoPage.kind && page.key === seoPage.key)
+    fallback.href = `${seo.siteUrl}${defaultEquivalent?.path ?? "/sk"}`
+    fallback.dataset.qdentI18n = "true"
+    document.head.appendChild(fallback)
 
     const translateTree = (root: Node) => {
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT)

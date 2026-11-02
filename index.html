@@ -1,1 +1,43 @@
-<!doctype html><html lang="sk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Moderná zubná starostlivosť v Bratislave s presnou diagnostikou, transparentnou liečbou a osobným prístupom."><link rel="icon" href="/assets/logo.svg"><title>Qdent | Moderná zubná klinika v Bratislave</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Moderná zubná starostlivosť v Bratislave s presnou diagnostikou, transparentnou liečbou a osobným prístupom.">
+    <link rel="icon" type="image/png" href="/assets/qdent-favicon.png">
+    <title>Qdent | Moderná zubná klinika v Bratislave</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Dentist",
+            "@id": "https://qdent.sk/#clinic",
+            "name": "Qdent",
+            "url": "https://qdent.sk/sk",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Gorkého 1",
+              "postalCode": "811 01",
+              "addressLocality": "Bratislava",
+              "addressCountry": "SK"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://qdent.sk/sk#barbora-pridavkova",
+            "name": "MDDr. Barbora Prídavková",
+            "jobTitle": "Zubná lekárka – terapeutka",
+            "url": "https://qdent.sk/sk#barbora-pridavkova",
+            "image": "https://qdent.sk/assets/barbora-hq.webp",
+            "worksFor": { "@id": "https://qdent.sk/#clinic" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
