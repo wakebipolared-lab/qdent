@@ -71,6 +71,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.dataset.locale = locale
     const currentPath = window.location.pathname.replace(/\/+$/, "") || "/"
     const seoPage = seo.pages.find((page) => page.path === currentPath)
+    const canonicalPath = seoPage ? `${seoPage.path}/` : window.location.pathname
     const title = seoPage?.title ?? t("Qdent | Modern dental clinic in Bratislava")
     const description = seoPage?.description ?? t("Modern dental care in Bratislava with precise diagnostics, transparent treatment and a personal approach.")
     document.title = title
@@ -89,18 +90,19 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     setMeta('meta[property="og:description"]', "content", description)
     setMeta('meta[property="og:locale"]', "content", htmlLanguage[locale])
     setMeta('meta[property="og:type"]', "content", seoPage?.kind === "profile" ? "profile" : "website")
-    setMeta('meta[property="og:url"]', "content", `${seo.siteUrl}${seoPage?.path ?? window.location.pathname}`)
+    setMeta('meta[property="og:url"]', "content", `${seo.siteUrl}${canonicalPath}`)
     setMeta('meta[name="twitter:card"]', "content", "summary_large_image")
     setMeta('meta[name="twitter:title"]', "content", title)
     setMeta('meta[name="twitter:description"]', "content", description)
-    setMeta('link[rel="canonical"]', "href", `${seo.siteUrl}${seoPage?.path ?? window.location.pathname}`)
+    setMeta('link[rel="canonical"]', "href", `${seo.siteUrl}${canonicalPath}`)
     document.head.querySelectorAll('link[rel="alternate"][data-qdent-i18n]').forEach((node) => node.remove())
     locales.forEach((alternate) => {
       const link = document.createElement("link")
       link.rel = "alternate"
       link.hreflang = htmlLanguage[alternate]
       const equivalent = seoPage && seo.pages.find((page) => page.locale === alternate && page.kind === seoPage.kind && page.key === seoPage.key)
-      link.href = `${seo.siteUrl}${equivalent?.path ?? localizedPath(alternate).split(/[?#]/)[0]}`
+      const alternatePath = equivalent ? `${equivalent.path}/` : `${localizedPath(alternate).split(/[?#]/)[0].replace(/\/+$/, "")}/`
+      link.href = `${seo.siteUrl}${alternatePath}`
       link.dataset.qdentI18n = "true"
       document.head.appendChild(link)
     })
@@ -108,7 +110,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     fallback.rel = "alternate"
     fallback.hreflang = "x-default"
     const defaultEquivalent = seoPage && seo.pages.find((page) => page.locale === defaultLocale && page.kind === seoPage.kind && page.key === seoPage.key)
-    fallback.href = `${seo.siteUrl}${defaultEquivalent?.path ?? "/sk"}`
+    fallback.href = `${seo.siteUrl}${defaultEquivalent ? `${defaultEquivalent.path}/` : "/sk/"}`
     fallback.dataset.qdentI18n = "true"
     document.head.appendChild(fallback)
 
