@@ -25,7 +25,7 @@ for (const page of seo.pages) {
       if (!html.includes(needle)) failures.push(`${page.path}: missing ${needle}`)
     }
   }
-  if (!redirects.includes(`${page.path} ${page.path}/ 301!`)) failures.push(`${page.path}: missing canonical trailing-slash redirect`)
+  if (!redirects.includes(`${page.path} ${page.path}/index.html 200`)) failures.push(`${page.path}: missing direct prerender rewrite`)
   if (!redirects.includes(`${page.path}/ ${page.path}/index.html 200`)) failures.push(`${page.path}: missing trailing-slash prerender rewrite`)
   if (redirects.includes(`${page.path} /index.html 200`)) failures.push(`${page.path}: prerender shadowed by generic SPA rewrite`)
 }
@@ -41,4 +41,4 @@ if (htmlCount !== seo.pages.length + 1) {
   console.error(`Expected ${seo.pages.length + 1} HTML documents, found ${htmlCount}`)
   process.exit(1)
 }
-console.log(`SEO_CHECK_OK pages=${seo.pages.length} languages=5 unique_titles=${titles.size} unique_descriptions=${descriptions.size} canonicals=${seo.pages.length} sitemap_urls=${seo.pages.length} html_documents=${htmlCount} canonical_redirects=${seo.pages.length} faq_schemas=${seo.pages.length} real_404=true`)
+console.log(`SEO_CHECK_OK pages=${seo.pages.length} languages=5 unique_titles=${titles.size} unique_descriptions=${descriptions.size} canonicals=${seo.pages.length} sitemap_urls=${seo.pages.length} html_documents=${htmlCount} direct_route_rewrites=${seo.pages.length * 2} faq_schemas=${seo.pages.length} real_404=true`)

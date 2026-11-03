@@ -23,7 +23,7 @@ fs.writeFileSync(path.join(root, "public", "robots.txt"), `User-agent: *\nAllow:
 const redirects = [
   "/ /sk 301!",
   ...seo.pages.flatMap((page) => [
-    `${page.path} ${page.path}/ 301!`,
+    `${page.path} ${page.path}/index.html 200`,
     `${page.path}/ ${page.path}/index.html 200`,
   ]),
   "/privacy /index.html 200",
