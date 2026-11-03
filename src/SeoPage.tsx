@@ -66,13 +66,13 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7FAF9] text-[#12253A]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#F7FAF9] text-[#12253A]">
       <header className="border-b border-[#DDE8E6] bg-[#009182]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+        <div className="mx-auto flex w-full max-w-6xl min-w-0 flex-col items-start gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <a href={`/${page.locale}`} aria-label="Q-Dent homepage">
             <img src="/assets/logo-web.svg" alt="Q-Dent" className="h-10 w-auto" />
           </a>
-          <div className="flex items-center gap-2" aria-label="Language versions">
+          <div className="grid w-full min-w-0 grid-cols-5 gap-1 sm:flex sm:w-auto sm:items-center sm:justify-start sm:gap-2" aria-label="Language versions">
             {(["sk", "en", "de", "ru", "ukr"] as Locale[]).map((code) => (
               <button key={code} onClick={() => switchLanguage(code)} className={`rounded-md px-2 py-1 text-xs font-semibold ${locale === code ? "bg-white text-[#009182]" : "text-white/85 hover:bg-white/10"}`}>
                 {code === "ukr" ? "UKR" : code.toUpperCase()}
@@ -82,7 +82,7 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
         </div>
       </header>
 
-      <main>
+      <main className="min-w-0">
         <section className="border-b border-[#DDE8E6] bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
             <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#5F6F79]">
@@ -92,7 +92,7 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
             <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
               <div className="max-w-3xl">
                 <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#009182]">Bratislava · Staré Mesto</p>
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{page.h1}</h1>
+                <h1 className="break-words text-4xl font-bold tracking-tight sm:text-5xl">{page.h1}</h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5F6F79]">{page.intro}</p>
               </div>
               {page.image && <img src={page.image} alt={page.h1} className="h-56 w-44 rounded-2xl object-cover shadow-md" />}
