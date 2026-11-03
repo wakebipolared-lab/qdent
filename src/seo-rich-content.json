@@ -1,0 +1,82 @@
+{
+  "sk": {
+    "overviewTitle": "Čo môžete v Q-Dent očakávať",
+    "overview": "{title} je súčasťou komplexnej zubnej starostlivosti Q-Dent v Bratislave – Staré Mesto. Počas konzultácie lekár zhodnotí aktuálny stav, vysvetlí vhodné možnosti a navrhne ďalší postup podľa individuálnej situácie pacienta.",
+    "processTitle": "Ako prebieha konzultácia",
+    "process": "Najprv sa venujeme ťažkostiam a očakávaniam pacienta. Podľa potreby nasleduje klinické vyšetrenie a potvrdená digitálna diagnostika. Lekár potom zrozumiteľne vysvetlí nález, možné riešenia, postup a cenu. Samotný výkon sa plánuje až po dohode s pacientom.",
+    "locationTitle": "Zubná ambulancia v centre Bratislavy",
+    "location": "Q-Dent sa nachádza na adrese Gorkého 1, 811 01 Bratislava – Staré Mesto. Klinika poskytuje starostlivosť pacientom z centra Bratislavy aj ďalších mestských častí. Aktuálny termín si môžete dohodnúť telefonicky alebo prostredníctvom formulára na stránke.",
+    "faqTitle": "Časté otázky",
+    "faq": [
+      ["Ako sa môžem objednať?", "Zavolajte na +421 903 760 901 alebo odošlite objednávkový formulár. Klinika následne potvrdí dostupný termín."],
+      ["Kedy sa dozviem cenu ošetrenia?", "Aktuálna cena a presný rozsah ošetrenia sa potvrdia po vyšetrení a konzultácii podľa individuálneho nálezu."],
+      ["Kde sa Q-Dent nachádza?", "Na adrese Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+    ],
+    "profileTitle": "Odborné zameranie v Q-Dent",
+    "profileText": "{title} pôsobí v tíme Q-Dent v Bratislave. Uvedené odborné zameranie vychádza z potvrdených informácií kliniky. Konkrétny postup liečby sa určuje až po osobnej konzultácii a vyšetrení."
+  },
+  "en": {
+    "overviewTitle": "What to expect at Q-Dent",
+    "overview": "{title} forms part of the comprehensive dental care provided by Q-Dent in Bratislava Old Town. During a consultation, the dentist assesses the current condition, explains suitable options and recommends the next steps for the patient’s individual situation.",
+    "processTitle": "How the consultation works",
+    "process": "The visit begins with your concerns and expectations. A clinical examination and confirmed digital diagnostics are used when appropriate. The dentist then explains the findings, available options, proposed stages and price. Treatment is scheduled only after the plan has been agreed with the patient.",
+    "locationTitle": "Dental care in central Bratislava",
+    "location": "Q-Dent is located at Gorkého 1, 811 01 Bratislava – Staré Mesto. The clinic welcomes patients from Bratislava Old Town and other city districts. You can request an appointment by phone or through the website form.",
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      ["How can I book an appointment?", "Call +421 903 760 901 or submit the appointment form. The clinic will confirm an available time."],
+      ["When will I know the treatment price?", "The current price and exact treatment scope are confirmed after examination and consultation according to the individual findings."],
+      ["Where is Q-Dent located?", "At Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+    ],
+    "profileTitle": "Professional focus at Q-Dent",
+    "profileText": "{title} is a member of the Q-Dent team in Bratislava. The professional focus shown here is based on information confirmed by the clinic. A specific treatment plan is determined only after an individual consultation and examination."
+  },
+  "de": {
+    "overviewTitle": "Was Sie bei Q-Dent erwartet",
+    "overview": "{title} ist Teil der umfassenden zahnmedizinischen Versorgung von Q-Dent in der Bratislavaer Altstadt. Bei der Beratung beurteilt der Zahnarzt die aktuelle Situation, erklärt geeignete Möglichkeiten und empfiehlt die nächsten Schritte entsprechend dem individuellen Befund.",
+    "processTitle": "Ablauf der Beratung",
+    "process": "Zu Beginn besprechen wir Beschwerden und Erwartungen. Je nach Bedarf folgen eine klinische Untersuchung und bestätigte digitale Diagnostik. Anschließend erläutert der Zahnarzt den Befund, mögliche Lösungen, den Ablauf und die Kosten. Die Behandlung wird erst nach gemeinsamer Abstimmung geplant.",
+    "locationTitle": "Zahnmedizin im Zentrum von Bratislava",
+    "location": "Q-Dent befindet sich in der Gorkého 1, 811 01 Bratislava – Staré Mesto. Die Klinik betreut Patienten aus der Altstadt und weiteren Stadtteilen Bratislavas. Einen Termin können Sie telefonisch oder über das Formular auf der Website anfragen.",
+    "faqTitle": "Häufige Fragen",
+    "faq": [
+      ["Wie kann ich einen Termin vereinbaren?", "Rufen Sie +421 903 760 901 an oder senden Sie das Terminformular. Die Klinik bestätigt anschließend einen verfügbaren Termin."],
+      ["Wann erfahre ich den Behandlungspreis?", "Der aktuelle Preis und der genaue Behandlungsumfang werden nach Untersuchung und Beratung anhand des individuellen Befunds bestätigt."],
+      ["Wo befindet sich Q-Dent?", "In der Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+    ],
+    "profileTitle": "Fachlicher Schwerpunkt bei Q-Dent",
+    "profileText": "{title} gehört zum Team von Q-Dent in Bratislava. Der angegebene fachliche Schwerpunkt basiert auf bestätigten Informationen der Klinik. Der konkrete Behandlungsplan wird erst nach persönlicher Beratung und Untersuchung festgelegt."
+  },
+  "ru": {
+    "overviewTitle": "Что ожидает пациента в Q-Dent",
+    "overview": "{title} входит в комплексную стоматологическую помощь Q-Dent в районе Staré Mesto в Братиславе. На консультации врач оценивает состояние полости рта, объясняет подходящие варианты и предлагает дальнейшие шаги с учётом индивидуальной ситуации пациента.",
+    "processTitle": "Как проходит консультация",
+    "process": "Сначала врач уточняет жалобы и ожидания пациента. При необходимости проводится клинический осмотр и подтверждённая цифровая диагностика. Затем врач объясняет результаты, возможные решения, этапы и стоимость. Лечение планируется после согласования с пациентом.",
+    "locationTitle": "Стоматология в центре Братиславы",
+    "location": "Q-Dent находится по адресу Gorkého 1, 811 01 Bratislava — Staré Mesto. Клиника принимает пациентов из Старого города и других районов Братиславы. Запросить время приёма можно по телефону или через форму на сайте.",
+    "faqTitle": "Частые вопросы",
+    "faq": [
+      ["Как записаться на приём?", "Позвоните по номеру +421 903 760 901 или отправьте форму записи. Клиника подтвердит доступное время."],
+      ["Когда будет известна стоимость лечения?", "Актуальная стоимость и точный объём лечения подтверждаются после осмотра и консультации с учётом индивидуальной ситуации."],
+      ["Где находится Q-Dent?", "По адресу Gorkého 1, 811 01 Bratislava — Staré Mesto."]
+    ],
+    "profileTitle": "Профессиональное направление в Q-Dent",
+    "profileText": "{title} работает в команде Q-Dent в Братиславе. Указанное профессиональное направление основано на подтверждённой информации клиники. Конкретный план лечения определяется только после личной консультации и осмотра."
+  },
+  "ukr": {
+    "overviewTitle": "Що очікує пацієнта в Q-Dent",
+    "overview": "{title} входить до комплексної стоматологічної допомоги Q-Dent у районі Staré Mesto в Братиславі. Під час консультації лікар оцінює стан ротової порожнини, пояснює відповідні варіанти та пропонує подальші кроки з урахуванням індивідуальної ситуації пацієнта.",
+    "processTitle": "Як проходить консультація",
+    "process": "Спочатку лікар уточнює скарги та очікування пацієнта. За потреби проводяться клінічний огляд і підтверджена цифрова діагностика. Потім лікар пояснює результати, можливі рішення, етапи та вартість. Лікування планується після погодження з пацієнтом.",
+    "locationTitle": "Стоматологія в центрі Братислави",
+    "location": "Q-Dent розташована за адресою Gorkého 1, 811 01 Bratislava — Staré Mesto. Клініка приймає пацієнтів зі Старого міста та інших районів Братислави. Запросити час прийому можна телефоном або через форму на сайті.",
+    "faqTitle": "Часті запитання",
+    "faq": [
+      ["Як записатися на прийом?", "Зателефонуйте за номером +421 903 760 901 або надішліть форму запису. Клініка підтвердить доступний час."],
+      ["Коли буде відома вартість лікування?", "Актуальна вартість і точний обсяг лікування підтверджуються після огляду та консультації з урахуванням індивідуальної ситуації."],
+      ["Де розташована Q-Dent?", "За адресою Gorkého 1, 811 01 Bratislava — Staré Mesto."]
+    ],
+    "profileTitle": "Професійний напрям у Q-Dent",
+    "profileText": "{title} працює в команді Q-Dent у Братиславі. Зазначений професійний напрям ґрунтується на підтвердженій інформації клініки. Конкретний план лікування визначається лише після особистої консультації та огляду."
+  }
+}

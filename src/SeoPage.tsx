@@ -1,6 +1,7 @@
 import * as React from "react"
 import { ArrowLeft, ArrowRight, MapPin, Phone } from "lucide-react"
 import seo from "./seo-content.json"
+import richContent from "./seo-rich-content.json"
 import { type Locale, useI18n } from "./i18n"
 
 type SeoPageRecord = (typeof seo.pages)[number]
@@ -13,6 +14,8 @@ export function findSeoPage(pathname: string): SeoPageRecord | undefined {
 export function SeoPage({ page }: { page: SeoPageRecord }) {
   const { locale, setLocale } = useI18n()
   const labels = seo.languages[page.locale as Locale]
+  const rich = richContent[page.locale as Locale]
+  const fill = (value: string) => value.replace("{title}", page.h1)
   const related = seo.pages.filter((candidate) =>
     candidate.locale === page.locale && candidate.kind === (page.kind === "profile" ? "profile" : "service"),
   )
@@ -23,7 +26,7 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
       "@type": page.kind === "profile" ? "Person" : page.kind === "service" ? "MedicalWebPage" : "Dentist",
       name: page.h1,
       description: page.description,
-      url: `${seo.siteUrl}${page.path}`,
+      url: `${seo.siteUrl}${page.path}/`,
       ...(page.kind === "profile" ? {
         image: page.image ? `${seo.siteUrl}${page.image}` : undefined,
         worksFor: { "@type": "Dentist", name: "Q-Dent", url: seo.siteUrl },
@@ -54,7 +57,7 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
 
   const switchLanguage = (next: Locale) => {
     const equivalent = seo.pages.find((candidate) => candidate.locale === next && candidate.kind === page.kind && candidate.key === page.key)
-    if (equivalent) window.history.pushState({}, "", equivalent.path)
+    if (equivalent) window.history.pushState({}, "", `${equivalent.path}/`)
     setLocale(next)
     window.location.reload()
   }
@@ -105,6 +108,34 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
             </div>
           )}
 
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
+              <h2 className="text-xl font-bold">{page.kind === "profile" ? rich.profileTitle : rich.overviewTitle}</h2>
+              <p className="mt-4 leading-7 text-[#5F6F79]">{fill(page.kind === "profile" ? rich.profileText : rich.overview)}</p>
+            </article>
+            <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
+              <h2 className="text-xl font-bold">{rich.processTitle}</h2>
+              <p className="mt-4 leading-7 text-[#5F6F79]">{rich.process}</p>
+            </article>
+            <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
+              <h2 className="text-xl font-bold">{rich.locationTitle}</h2>
+              <p className="mt-4 leading-7 text-[#5F6F79]">{rich.location}</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Q-Dent%2C%20Gork%C3%A9ho%201%2C%20Bratislava" className="mt-4 inline-flex font-semibold text-[#009182]">Google Maps</a>
+            </article>
+          </div>
+
+          <section className="mt-14" aria-labelledby="seo-faq-title">
+            <h2 id="seo-faq-title" className="text-2xl font-bold">{rich.faqTitle}</h2>
+            <div className="mt-6 grid gap-4">
+              {rich.faq.map(([question, answer]) => (
+                <details key={question} className="rounded-xl border border-[#DDE8E6] bg-white p-5">
+                  <summary className="cursor-pointer font-semibold">{question}</summary>
+                  <p className="mt-3 leading-7 text-[#5F6F79]">{answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
           <div className="mt-14 rounded-2xl bg-[#12253A] p-7 text-white sm:p-9">
             <h2 className="text-2xl font-bold">Q-Dent · Gorkého 1</h2>
             <p className="mt-3 flex items-center gap-2 text-white/75"><MapPin className="h-4 w-4" />811 01 Staré Mesto, Bratislava</p>
@@ -116,7 +147,7 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
               <h2 className="text-2xl font-bold">{page.kind === "profile" ? labels.teamLabel : labels.servicesLabel}</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {related.filter((item) => item.path !== page.path).map((item) => (
-                  <a key={item.path} href={item.path} className="group flex items-center justify-between rounded-xl border border-[#DDE8E6] bg-white p-5 font-semibold hover:border-[#009182] hover:text-[#009182]">
+                  <a key={item.path} href={`${item.path}/`} className="group flex items-center justify-between rounded-xl border border-[#DDE8E6] bg-white p-5 font-semibold hover:border-[#009182] hover:text-[#009182]">
                     {item.h1}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 ))}

@@ -1032,7 +1032,7 @@ function DoctorsSection() {
               <div className="p-6">
                 <h3 className="font-heading text-lg font-semibold text-[#12253A]">
                   {member.profileKey ? (
-                    <a className="hover:text-[#009182] hover:underline" href={seo.pages.find((page) => page.locale === locale && page.kind === "profile" && page.key === member.profileKey)?.path}>
+                    <a className="hover:text-[#009182] hover:underline" href={`${seo.pages.find((page) => page.locale === locale && page.kind === "profile" && page.key === member.profileKey)?.path}/`}>
                       {t(member.name)}
                     </a>
                   ) : t(member.name)}
@@ -1938,7 +1938,7 @@ function QdentHomepage() {
             <h2 id="explore-qdent" className="font-heading text-2xl font-bold text-[#12253A]">{seo.languages[locale].servicesLabel}</h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {seoLinks.map((page) => (
-                <a key={page.path} href={page.path} className="rounded-xl border border-[#DDE8E6] bg-white p-4 font-body text-sm font-semibold text-[#12253A] transition-colors hover:border-[#009182] hover:text-[#009182]">
+                <a key={page.path} href={`${page.path}/`} className="rounded-xl border border-[#DDE8E6] bg-white p-4 font-body text-sm font-semibold text-[#12253A] transition-colors hover:border-[#009182] hover:text-[#009182]">
                   {page.h1}
                 </a>
               ))}
