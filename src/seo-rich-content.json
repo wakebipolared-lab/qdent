@@ -8,12 +8,35 @@
     "location": "Q-Dent sa nachádza na adrese Gorkého 1, 811 01 Bratislava – Staré Mesto. Klinika poskytuje starostlivosť pacientom z centra Bratislavy aj ďalších mestských častí. Aktuálny termín si môžete dohodnúť telefonicky alebo prostredníctvom formulára na stránke.",
     "faqTitle": "Časté otázky",
     "faq": [
-      ["Ako sa môžem objednať?", "Zavolajte na +421 903 760 901 alebo odošlite objednávkový formulár. Klinika následne potvrdí dostupný termín."],
-      ["Kedy sa dozviem cenu ošetrenia?", "Aktuálna cena a presný rozsah ošetrenia sa potvrdia po vyšetrení a konzultácii podľa individuálneho nálezu."],
-      ["Kde sa Q-Dent nachádza?", "Na adrese Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+      [
+        "Ako sa môžem objednať?",
+        "Zavolajte na +421 903 760 901 alebo odošlite objednávkový formulár. Klinika následne potvrdí dostupný termín."
+      ],
+      [
+        "Kedy sa dozviem cenu ošetrenia?",
+        "Aktuálna cena a presný rozsah ošetrenia sa potvrdia po vyšetrení a konzultácii podľa individuálneho nálezu."
+      ],
+      [
+        "Kde sa Q-Dent nachádza?",
+        "Na adrese Gorkého 1, 811 01 Bratislava – Staré Mesto."
+      ]
     ],
     "profileTitle": "Odborné zameranie v Q-Dent",
-    "profileText": "{title} pôsobí v tíme Q-Dent v Bratislave. Uvedené odborné zameranie vychádza z potvrdených informácií kliniky. Konkrétny postup liečby sa určuje až po osobnej konzultácii a vyšetrení."
+    "profileText": "{title} pôsobí v tíme Q-Dent v Bratislave. Uvedené odborné zameranie vychádza z potvrdených informácií kliniky. Konkrétny postup liečby sa určuje až po osobnej konzultácii a vyšetrení.",
+    "serviceDetails": {
+      "hygiene": {
+        "overviewTitle": "Prečo je profesionálna hygiena dôležitá",
+        "overview": "Profesionálna dentálna hygiena dopĺňa každodenné čistenie. Pomáha odstrániť povlaky a usadeniny z miest, ktoré sa doma čistia ťažšie, a vytvára priestor na individuálne odporúčania pre ďalšiu starostlivosť.",
+        "processTitle": "Ako prebieha dentálna hygiena",
+        "process": "Návšteva sa začína zhodnotením zubov a ďasien. Podľa aktuálneho stavu nasleduje profesionálne čistenie a air-polishing systémom EMS Airflow. Na záver pacient dostane odporúčania pre domácu hygienu."
+      },
+      "whitening": {
+        "overviewTitle": "Kedy zvážiť profesionálne bielenie",
+        "overview": "Bielenie je vhodné plánovať až po kontrole zubov a ďasien. Konzultácia umožní posúdiť individuálnu situáciu, vysvetliť realistické očakávania a zvoliť vhodný postup.",
+        "processTitle": "Ako prebieha plánovanie bielenia",
+        "process": "Najprv sa zhodnotí stav chrupu a vhodnosť bielenia. Lekár vysvetlí navrhovaný postup a následnú starostlivosť. Samotné ošetrenie sa uskutoční až po dohode s pacientom."
+      }
+    }
   },
   "en": {
     "overviewTitle": "What to expect at Q-Dent",
@@ -24,12 +47,35 @@
     "location": "Q-Dent is located at Gorkého 1, 811 01 Bratislava – Staré Mesto. The clinic welcomes patients from Bratislava Old Town and other city districts. You can request an appointment by phone or through the website form.",
     "faqTitle": "Frequently asked questions",
     "faq": [
-      ["How can I book an appointment?", "Call +421 903 760 901 or submit the appointment form. The clinic will confirm an available time."],
-      ["When will I know the treatment price?", "The current price and exact treatment scope are confirmed after examination and consultation according to the individual findings."],
-      ["Where is Q-Dent located?", "At Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+      [
+        "How can I book an appointment?",
+        "Call +421 903 760 901 or submit the appointment form. The clinic will confirm an available time."
+      ],
+      [
+        "When will I know the treatment price?",
+        "The current price and exact treatment scope are confirmed after examination and consultation according to the individual findings."
+      ],
+      [
+        "Where is Q-Dent located?",
+        "At Gorkého 1, 811 01 Bratislava – Staré Mesto."
+      ]
     ],
     "profileTitle": "Professional focus at Q-Dent",
-    "profileText": "{title} is a member of the Q-Dent team in Bratislava. The professional focus shown here is based on information confirmed by the clinic. A specific treatment plan is determined only after an individual consultation and examination."
+    "profileText": "{title} is a member of the Q-Dent team in Bratislava. The professional focus shown here is based on information confirmed by the clinic. A specific treatment plan is determined only after an individual consultation and examination.",
+    "serviceDetails": {
+      "hygiene": {
+        "overviewTitle": "Why professional hygiene matters",
+        "overview": "Professional dental hygiene complements daily brushing. It helps remove plaque and deposits from areas that are harder to clean at home and provides an opportunity for individual home-care guidance.",
+        "processTitle": "What happens during dental hygiene",
+        "process": "The visit begins with an assessment of the teeth and gums. Professional cleaning and air-polishing with the EMS Airflow system follow according to the current condition. The visit ends with individual home-care advice."
+      },
+      "whitening": {
+        "overviewTitle": "When to consider professional whitening",
+        "overview": "Whitening should be planned after the teeth and gums have been checked. A consultation helps assess the individual situation, explain realistic expectations and select a suitable approach.",
+        "processTitle": "How whitening is planned",
+        "process": "The dentist first assesses oral health and suitability for whitening. The proposed approach and aftercare are explained before treatment, which proceeds only after agreement with the patient."
+      }
+    }
   },
   "de": {
     "overviewTitle": "Was Sie bei Q-Dent erwartet",
@@ -40,12 +86,35 @@
     "location": "Q-Dent befindet sich in der Gorkého 1, 811 01 Bratislava – Staré Mesto. Die Klinik betreut Patienten aus der Altstadt und weiteren Stadtteilen Bratislavas. Einen Termin können Sie telefonisch oder über das Formular auf der Website anfragen.",
     "faqTitle": "Häufige Fragen",
     "faq": [
-      ["Wie kann ich einen Termin vereinbaren?", "Rufen Sie +421 903 760 901 an oder senden Sie das Terminformular. Die Klinik bestätigt anschließend einen verfügbaren Termin."],
-      ["Wann erfahre ich den Behandlungspreis?", "Der aktuelle Preis und der genaue Behandlungsumfang werden nach Untersuchung und Beratung anhand des individuellen Befunds bestätigt."],
-      ["Wo befindet sich Q-Dent?", "In der Gorkého 1, 811 01 Bratislava – Staré Mesto."]
+      [
+        "Wie kann ich einen Termin vereinbaren?",
+        "Rufen Sie +421 903 760 901 an oder senden Sie das Terminformular. Die Klinik bestätigt anschließend einen verfügbaren Termin."
+      ],
+      [
+        "Wann erfahre ich den Behandlungspreis?",
+        "Der aktuelle Preis und der genaue Behandlungsumfang werden nach Untersuchung und Beratung anhand des individuellen Befunds bestätigt."
+      ],
+      [
+        "Wo befindet sich Q-Dent?",
+        "In der Gorkého 1, 811 01 Bratislava – Staré Mesto."
+      ]
     ],
     "profileTitle": "Fachlicher Schwerpunkt bei Q-Dent",
-    "profileText": "{title} gehört zum Team von Q-Dent in Bratislava. Der angegebene fachliche Schwerpunkt basiert auf bestätigten Informationen der Klinik. Der konkrete Behandlungsplan wird erst nach persönlicher Beratung und Untersuchung festgelegt."
+    "profileText": "{title} gehört zum Team von Q-Dent in Bratislava. Der angegebene fachliche Schwerpunkt basiert auf bestätigten Informationen der Klinik. Der konkrete Behandlungsplan wird erst nach persönlicher Beratung und Untersuchung festgelegt.",
+    "serviceDetails": {
+      "hygiene": {
+        "overviewTitle": "Warum professionelle Dentalhygiene wichtig ist",
+        "overview": "Professionelle Dentalhygiene ergänzt die tägliche Zahnpflege. Sie hilft, Beläge und Ablagerungen an schwer erreichbaren Stellen zu entfernen, und ermöglicht individuelle Empfehlungen für die häusliche Pflege.",
+        "processTitle": "Ablauf der Dentalhygiene",
+        "process": "Der Termin beginnt mit der Beurteilung von Zähnen und Zahnfleisch. Je nach aktuellem Zustand folgen professionelle Reinigung und Air-Polishing mit dem EMS-Airflow-System. Abschließend erhalten Sie individuelle Pflegeempfehlungen."
+      },
+      "whitening": {
+        "overviewTitle": "Wann eine professionelle Zahnaufhellung sinnvoll ist",
+        "overview": "Eine Zahnaufhellung sollte erst nach der Kontrolle von Zähnen und Zahnfleisch geplant werden. Die Beratung dient dazu, die individuelle Situation zu beurteilen, realistische Erwartungen zu besprechen und ein geeignetes Vorgehen festzulegen.",
+        "processTitle": "Planung der Zahnaufhellung",
+        "process": "Zunächst werden Mundgesundheit und Eignung beurteilt. Der Zahnarzt erklärt das vorgeschlagene Vorgehen und die Nachsorge. Die Behandlung erfolgt erst nach Abstimmung mit dem Patienten."
+      }
+    }
   },
   "ru": {
     "overviewTitle": "Что ожидает пациента в Q-Dent",
@@ -56,12 +125,35 @@
     "location": "Q-Dent находится по адресу Gorkého 1, 811 01 Bratislava — Staré Mesto. Клиника принимает пациентов из Старого города и других районов Братиславы. Запросить время приёма можно по телефону или через форму на сайте.",
     "faqTitle": "Частые вопросы",
     "faq": [
-      ["Как записаться на приём?", "Позвоните по номеру +421 903 760 901 или отправьте форму записи. Клиника подтвердит доступное время."],
-      ["Когда будет известна стоимость лечения?", "Актуальная стоимость и точный объём лечения подтверждаются после осмотра и консультации с учётом индивидуальной ситуации."],
-      ["Где находится Q-Dent?", "По адресу Gorkého 1, 811 01 Bratislava — Staré Mesto."]
+      [
+        "Как записаться на приём?",
+        "Позвоните по номеру +421 903 760 901 или отправьте форму записи. Клиника подтвердит доступное время."
+      ],
+      [
+        "Когда будет известна стоимость лечения?",
+        "Актуальная стоимость и точный объём лечения подтверждаются после осмотра и консультации с учётом индивидуальной ситуации."
+      ],
+      [
+        "Где находится Q-Dent?",
+        "По адресу Gorkého 1, 811 01 Bratislava — Staré Mesto."
+      ]
     ],
     "profileTitle": "Профессиональное направление в Q-Dent",
-    "profileText": "{title} работает в команде Q-Dent в Братиславе. Указанное профессиональное направление основано на подтверждённой информации клиники. Конкретный план лечения определяется только после личной консультации и осмотра."
+    "profileText": "{title} работает в команде Q-Dent в Братиславе. Указанное профессиональное направление основано на подтверждённой информации клиники. Конкретный план лечения определяется только после личной консультации и осмотра.",
+    "serviceDetails": {
+      "hygiene": {
+        "overviewTitle": "Зачем нужна профессиональная гигиена",
+        "overview": "Профессиональная гигиена дополняет ежедневную чистку. Она помогает удалить налёт и отложения из труднодоступных мест и получить индивидуальные рекомендации по домашнему уходу.",
+        "processTitle": "Как проходит профессиональная гигиена",
+        "process": "Визит начинается с оценки состояния зубов и дёсен. В зависимости от состояния выполняются профессиональная чистка и air-polishing системой EMS Airflow. В завершение пациент получает рекомендации по домашнему уходу."
+      },
+      "whitening": {
+        "overviewTitle": "Когда стоит рассмотреть профессиональное отбеливание",
+        "overview": "Отбеливание планируют после проверки состояния зубов и дёсен. Консультация помогает оценить индивидуальную ситуацию, обсудить реалистичные ожидания и выбрать подходящий вариант.",
+        "processTitle": "Как планируется отбеливание",
+        "process": "Сначала врач оценивает здоровье полости рта и возможность отбеливания. До процедуры врач объясняет предложенный подход и последующий уход. Лечение проводится после согласования с пациентом."
+      }
+    }
   },
   "ukr": {
     "overviewTitle": "Що очікує пацієнта в Q-Dent",
@@ -72,11 +164,34 @@
     "location": "Q-Dent розташована за адресою Gorkého 1, 811 01 Bratislava — Staré Mesto. Клініка приймає пацієнтів зі Старого міста та інших районів Братислави. Запросити час прийому можна телефоном або через форму на сайті.",
     "faqTitle": "Часті запитання",
     "faq": [
-      ["Як записатися на прийом?", "Зателефонуйте за номером +421 903 760 901 або надішліть форму запису. Клініка підтвердить доступний час."],
-      ["Коли буде відома вартість лікування?", "Актуальна вартість і точний обсяг лікування підтверджуються після огляду та консультації з урахуванням індивідуальної ситуації."],
-      ["Де розташована Q-Dent?", "За адресою Gorkého 1, 811 01 Bratislava — Staré Mesto."]
+      [
+        "Як записатися на прийом?",
+        "Зателефонуйте за номером +421 903 760 901 або надішліть форму запису. Клініка підтвердить доступний час."
+      ],
+      [
+        "Коли буде відома вартість лікування?",
+        "Актуальна вартість і точний обсяг лікування підтверджуються після огляду та консультації з урахуванням індивідуальної ситуації."
+      ],
+      [
+        "Де розташована Q-Dent?",
+        "За адресою Gorkého 1, 811 01 Bratislava — Staré Mesto."
+      ]
     ],
     "profileTitle": "Професійний напрям у Q-Dent",
-    "profileText": "{title} працює в команді Q-Dent у Братиславі. Зазначений професійний напрям ґрунтується на підтвердженій інформації клініки. Конкретний план лікування визначається лише після особистої консультації та огляду."
+    "profileText": "{title} працює в команді Q-Dent у Братиславі. Зазначений професійний напрям ґрунтується на підтвердженій інформації клініки. Конкретний план лікування визначається лише після особистої консультації та огляду.",
+    "serviceDetails": {
+      "hygiene": {
+        "overviewTitle": "Навіщо потрібна професійна гігієна",
+        "overview": "Професійна гігієна доповнює щоденне чищення. Вона допомагає видалити наліт і відкладення з важкодоступних ділянок та отримати індивідуальні рекомендації щодо домашнього догляду.",
+        "processTitle": "Як проходить професійна гігієна",
+        "process": "Візит починається з оцінки стану зубів і ясен. Відповідно до стану проводяться професійне чищення та air-polishing системою EMS Airflow. Наприкінці пацієнт отримує рекомендації для домашнього догляду."
+      },
+      "whitening": {
+        "overviewTitle": "Коли варто розглянути професійне відбілювання",
+        "overview": "Відбілювання планують після перевірки стану зубів і ясен. Консультація допомагає оцінити індивідуальну ситуацію, обговорити реалістичні очікування та обрати відповідний варіант.",
+        "processTitle": "Як планується відбілювання",
+        "process": "Спочатку лікар оцінює здоров’я ротової порожнини та доцільність відбілювання. До процедури пояснюються запропонований підхід і подальший догляд. Лікування проводиться після погодження з пацієнтом."
+      }
+    }
   }
 }

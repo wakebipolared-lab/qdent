@@ -94,9 +94,39 @@
         "3D skenovanie",
         "Konzultácia a konzultácia špecialistu",
         "Akútne zubné vyšetrenie",
-        "Profesionálna dentálna hygiena",
-        "Bielenie zubov",
-        "Injekčná anestézia a kofferdam"
+        "Profesionálna dentálna hygiena"
+      ]
+    },
+    {
+      "locale": "sk",
+      "kind": "service",
+      "key": "hygiene",
+      "path": "/sk/sluzby/dentalna-hygiena-bratislava",
+      "title": "Dentálna hygiena Bratislava | Q-Dent Staré Mesto",
+      "description": "Profesionálna dentálna hygiena v Q-Dent, Bratislava – Staré Mesto. Odstránenie povlakov a usadenín, air-polishing EMS Airflow a individuálne odporúčania.",
+      "h1": "Dentálna hygiena v Bratislave – Staré Mesto",
+      "intro": "Profesionálna dentálna hygiena pomáha odstrániť zubný povlak a usadeniny, ktoré bežné domáce čistenie nemusí zachytiť. V Q-Dent v centre Bratislavy prispôsobíme postup aktuálnemu stavu chrupu a ďasien.",
+      "items": [
+        "Zhodnotenie stavu zubov a ďasien",
+        "Profesionálne odstránenie povlakov a usadenín",
+        "Air-polishing systémom EMS Airflow",
+        "Individuálne odporúčania pre domácu hygienu"
+      ]
+    },
+    {
+      "locale": "sk",
+      "kind": "service",
+      "key": "whitening",
+      "path": "/sk/sluzby/bielenie-zubov-bratislava",
+      "title": "Bielenie zubov Bratislava | Q-Dent Staré Mesto",
+      "description": "Bielenie zubov v Q-Dent, Bratislava – Staré Mesto. Konzultácia, posúdenie vhodnosti a individuálny plán profesionálneho bielenia.",
+      "h1": "Bielenie zubov v Bratislave – Staré Mesto",
+      "intro": "Profesionálne bielenie zubov sa plánuje po zhodnotení stavu zubov a ďasien. V Q-Dent najprv vysvetlíme vhodný postup, očakávania aj následnú starostlivosť.",
+      "items": [
+        "Úvodná konzultácia a posúdenie vhodnosti",
+        "Kontrola stavu zubov a ďasien",
+        "Individuálne naplánovaný postup bielenia",
+        "Odporúčania pre starostlivosť po ošetrení"
       ]
     },
     {
@@ -228,9 +258,39 @@
         "3D dental scanning",
         "Consultation and specialist consultation",
         "Emergency dental examination",
-        "Professional dental hygiene",
-        "Teeth whitening",
-        "Injection anaesthesia and rubber dam"
+        "Professional dental hygiene"
+      ]
+    },
+    {
+      "locale": "en",
+      "kind": "service",
+      "key": "hygiene",
+      "path": "/en/services/dental-hygiene-bratislava",
+      "title": "Dental Hygiene Bratislava | Q-Dent Old Town",
+      "description": "Professional dental hygiene at Q-Dent in Bratislava Old Town. Plaque and deposit removal, EMS Airflow air-polishing and individual home-care guidance.",
+      "h1": "Dental hygiene in Bratislava Old Town",
+      "intro": "Professional dental hygiene removes plaque and deposits that everyday brushing may not reach. At Q-Dent in central Bratislava, the visit is adapted to the current condition of your teeth and gums.",
+      "items": [
+        "Assessment of teeth and gums",
+        "Professional plaque and deposit removal",
+        "Air-polishing with the EMS Airflow system",
+        "Individual guidance for home care"
+      ]
+    },
+    {
+      "locale": "en",
+      "kind": "service",
+      "key": "whitening",
+      "path": "/en/services/teeth-whitening-bratislava",
+      "title": "Teeth Whitening Bratislava | Q-Dent Old Town",
+      "description": "Teeth whitening at Q-Dent in Bratislava Old Town. Consultation, suitability assessment and an individual professional whitening plan.",
+      "h1": "Teeth whitening in Bratislava Old Town",
+      "intro": "Professional teeth whitening is planned after the condition of the teeth and gums has been assessed. Q-Dent explains the suitable approach, realistic expectations and aftercare before treatment.",
+      "items": [
+        "Initial consultation and suitability assessment",
+        "Check of teeth and gum health",
+        "Individually planned whitening procedure",
+        "Aftercare recommendations"
       ]
     },
     {
@@ -362,9 +422,39 @@
         "3D-Zahnscan",
         "Beratung und Fachberatung",
         "Zahnärztliche Notfalluntersuchung",
-        "Professionelle Dentalhygiene",
-        "Zahnaufhellung",
-        "Injektionsanästhesie und Kofferdam"
+        "Professionelle Dentalhygiene"
+      ]
+    },
+    {
+      "locale": "de",
+      "kind": "service",
+      "key": "hygiene",
+      "path": "/de/leistungen/dentalhygiene-bratislava",
+      "title": "Dentalhygiene Bratislava | Q-Dent Altstadt",
+      "description": "Professionelle Dentalhygiene bei Q-Dent in Bratislava – Staré Mesto. Entfernung von Belägen, EMS-Airflow und individuelle Empfehlungen.",
+      "h1": "Professionelle Dentalhygiene in Bratislava",
+      "intro": "Eine professionelle Dentalhygiene entfernt Beläge und Ablagerungen, die bei der täglichen Pflege verbleiben können. Bei Q-Dent im Zentrum von Bratislava wird der Ablauf an den Zustand von Zähnen und Zahnfleisch angepasst.",
+      "items": [
+        "Beurteilung von Zähnen und Zahnfleisch",
+        "Professionelle Entfernung von Belägen und Ablagerungen",
+        "Air-Polishing mit dem EMS-Airflow-System",
+        "Individuelle Empfehlungen für die häusliche Pflege"
+      ]
+    },
+    {
+      "locale": "de",
+      "kind": "service",
+      "key": "whitening",
+      "path": "/de/leistungen/zahnaufhellung-bratislava",
+      "title": "Zahnaufhellung Bratislava | Q-Dent Altstadt",
+      "description": "Professionelle Zahnaufhellung bei Q-Dent in Bratislava – Staré Mesto. Beratung, Eignungsprüfung und individueller Behandlungsplan.",
+      "h1": "Zahnaufhellung in Bratislava – Staré Mesto",
+      "intro": "Eine professionelle Zahnaufhellung wird nach der Beurteilung von Zähnen und Zahnfleisch geplant. Q-Dent erläutert vor der Behandlung das geeignete Vorgehen, realistische Erwartungen und die Nachsorge.",
+      "items": [
+        "Beratung und Prüfung der Eignung",
+        "Kontrolle von Zähnen und Zahnfleisch",
+        "Individuell geplante Zahnaufhellung",
+        "Empfehlungen zur Nachsorge"
       ]
     },
     {
@@ -496,9 +586,39 @@
         "3D-сканирование зубов",
         "Консультация и консультация специалиста",
         "Срочный осмотр стоматолога",
-        "Профессиональная гигиена полости рта",
-        "Отбеливание зубов",
-        "Инъекционная анестезия и коффердам"
+        "Профессиональная гигиена полости рта"
+      ]
+    },
+    {
+      "locale": "ru",
+      "kind": "service",
+      "key": "hygiene",
+      "path": "/ru/uslugi/professionalnaya-gigiena-bratislava",
+      "title": "Профессиональная гигиена в Братиславе | Q-Dent",
+      "description": "Профессиональная гигиена зубов в Q-Dent, Братислава — Staré Mesto. Удаление налёта и отложений, EMS Airflow и индивидуальные рекомендации.",
+      "h1": "Профессиональная гигиена зубов в Братиславе",
+      "intro": "Профессиональная гигиена помогает удалить налёт и отложения, которые могут оставаться после домашней чистки. В Q-Dent в центре Братиславы процедура подбирается с учётом состояния зубов и дёсен.",
+      "items": [
+        "Оценка состояния зубов и дёсен",
+        "Профессиональное удаление налёта и отложений",
+        "Air-polishing системой EMS Airflow",
+        "Индивидуальные рекомендации по домашнему уходу"
+      ]
+    },
+    {
+      "locale": "ru",
+      "kind": "service",
+      "key": "whitening",
+      "path": "/ru/uslugi/otbelivanie-zubov-bratislava",
+      "title": "Отбеливание зубов в Братиславе | Q-Dent",
+      "description": "Профессиональное отбеливание зубов в Q-Dent, Братислава — Staré Mesto. Консультация, оценка показаний и индивидуальный план.",
+      "h1": "Отбеливание зубов в Братиславе",
+      "intro": "Профессиональное отбеливание планируется после оценки состояния зубов и дёсен. До процедуры в Q-Dent объясняют подходящий вариант, реалистичные ожидания и последующий уход.",
+      "items": [
+        "Первичная консультация и оценка показаний",
+        "Проверка состояния зубов и дёсен",
+        "Индивидуально спланированная процедура",
+        "Рекомендации по уходу после отбеливания"
       ]
     },
     {
@@ -630,9 +750,39 @@
         "3D-сканування зубів",
         "Консультація та консультація спеціаліста",
         "Невідкладний огляд стоматолога",
-        "Професійна гігієна порожнини рота",
-        "Відбілювання зубів",
-        "Ін’єкційна анестезія та кофердам"
+        "Професійна гігієна порожнини рота"
+      ]
+    },
+    {
+      "locale": "ukr",
+      "kind": "service",
+      "key": "hygiene",
+      "path": "/ukr/posluhy/profesiina-hihiiena-bratyslava",
+      "title": "Професійна гігієна у Братиславі | Q-Dent",
+      "description": "Професійна гігієна зубів у Q-Dent, Братислава — Staré Mesto. Видалення нальоту й відкладень, EMS Airflow та індивідуальні рекомендації.",
+      "h1": "Професійна гігієна зубів у Братиславі",
+      "intro": "Професійна гігієна допомагає видалити наліт і відкладення, які можуть залишатися після домашнього чищення. У Q-Dent у центрі Братислави процедуру адаптують до стану зубів і ясен.",
+      "items": [
+        "Оцінка стану зубів і ясен",
+        "Професійне видалення нальоту та відкладень",
+        "Air-polishing системою EMS Airflow",
+        "Індивідуальні рекомендації для домашнього догляду"
+      ]
+    },
+    {
+      "locale": "ukr",
+      "kind": "service",
+      "key": "whitening",
+      "path": "/ukr/posluhy/vidbiliuvannia-zubiv-bratyslava",
+      "title": "Відбілювання зубів у Братиславі | Q-Dent",
+      "description": "Професійне відбілювання зубів у Q-Dent, Братислава — Staré Mesto. Консультація, оцінка доцільності та індивідуальний план.",
+      "h1": "Відбілювання зубів у Братиславі",
+      "intro": "Професійне відбілювання планується після оцінки стану зубів і ясен. До процедури в Q-Dent пояснюють відповідний варіант, реалістичні очікування та подальший догляд.",
+      "items": [
+        "Первинна консультація й оцінка доцільності",
+        "Перевірка стану зубів і ясен",
+        "Індивідуально спланована процедура",
+        "Рекомендації щодо догляду після відбілювання"
       ]
     },
     {
@@ -742,6 +892,8 @@
   ],
   "serviceKeys": [
     "diagnostics",
+    "hygiene",
+    "whitening",
     "surgery",
     "restorative",
     "prosthetics"

@@ -15,6 +15,9 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
   const { locale, setLocale } = useI18n()
   const labels = seo.languages[page.locale as Locale]
   const rich = richContent[page.locale as Locale]
+  const serviceDetail = (rich as typeof rich & {
+    serviceDetails?: Record<string, { overviewTitle: string; overview: string; processTitle: string; process: string }>
+  }).serviceDetails?.[page.key]
   const fill = (value: string) => value.replace("{title}", page.h1)
   const related = seo.pages.filter((candidate) =>
     candidate.locale === page.locale && candidate.kind === (page.kind === "profile" ? "profile" : "service"),
@@ -110,12 +113,12 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
 
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
-              <h2 className="text-xl font-bold">{page.kind === "profile" ? rich.profileTitle : rich.overviewTitle}</h2>
-              <p className="mt-4 leading-7 text-[#5F6F79]">{fill(page.kind === "profile" ? rich.profileText : rich.overview)}</p>
+              <h2 className="text-xl font-bold">{page.kind === "profile" ? rich.profileTitle : serviceDetail?.overviewTitle ?? rich.overviewTitle}</h2>
+              <p className="mt-4 leading-7 text-[#5F6F79]">{fill(page.kind === "profile" ? rich.profileText : serviceDetail?.overview ?? rich.overview)}</p>
             </article>
             <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
-              <h2 className="text-xl font-bold">{rich.processTitle}</h2>
-              <p className="mt-4 leading-7 text-[#5F6F79]">{rich.process}</p>
+              <h2 className="text-xl font-bold">{serviceDetail?.processTitle ?? rich.processTitle}</h2>
+              <p className="mt-4 leading-7 text-[#5F6F79]">{serviceDetail?.process ?? rich.process}</p>
             </article>
             <article className="rounded-2xl border border-[#DDE8E6] bg-white p-6">
               <h2 className="text-xl font-bold">{rich.locationTitle}</h2>
@@ -139,7 +142,10 @@ export function SeoPage({ page }: { page: SeoPageRecord }) {
           <div className="mt-14 rounded-2xl bg-[#12253A] p-7 text-white sm:p-9">
             <h2 className="text-2xl font-bold">Q-Dent · Gorkého 1</h2>
             <p className="mt-3 flex items-center gap-2 text-white/75"><MapPin className="h-4 w-4" />811 01 Staré Mesto, Bratislava</p>
-            <a href="tel:+421903760901" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#009182] px-5 py-3 font-semibold hover:bg-[#00786d]"><Phone className="h-4 w-4" />{labels.contact}</a>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href="tel:+421903760901" className="inline-flex items-center gap-2 rounded-xl bg-[#009182] px-5 py-3 font-semibold hover:bg-[#00786d]"><Phone className="h-4 w-4" />{labels.contact}</a>
+              <a href={`/${page.locale}/?service=${encodeURIComponent(page.key === "hygiene" ? "Dental hygiene" : page.key === "whitening" ? "Teeth whitening" : "Not sure yet")}#appointment`} className="inline-flex items-center rounded-xl border border-white/30 px-5 py-3 font-semibold hover:bg-white/10">{labels.contact}</a>
+            </div>
           </div>
 
           {related.length > 1 && (

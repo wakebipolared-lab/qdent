@@ -394,6 +394,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 const SERVICE_OPTIONS = [
   "General check-up",
+  "Dental hygiene",
   "Prosthetics",
   "Restorative dentistry",
   "Dental surgery",
@@ -1322,12 +1323,16 @@ const APPOINTMENT_ENDPOINT =
 
 function AppointmentSection() {
   const { t } = useI18n()
+  const requestedService = new URLSearchParams(window.location.search).get("service")
+  const initialService = requestedService && SERVICE_OPTIONS.includes(requestedService)
+    ? requestedService
+    : ""
   const [form, setForm] = useState<AppointmentFormState>({
     name: "",
     phone: "",
     email: "",
     date: "",
-    service: "",
+    service: initialService,
     note: "",
   })
   const [errors, setErrors] = useState<Partial<AppointmentFormState>>({})
