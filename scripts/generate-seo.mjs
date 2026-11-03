@@ -18,6 +18,18 @@ ${seo.pages.map((page) => `<url><loc>${seo.siteUrl}${page.path}</loc>${alternate
 `
 fs.writeFileSync(path.join(root, "public", "sitemap.xml"), sitemap)
 fs.writeFileSync(path.join(root, "public", "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${seo.siteUrl}/sitemap.xml\n`)
+const redirects = [
+  "/ /sk 301!",
+  ...seo.pages.flatMap((page) => [
+    `${page.path} ${page.path}/index.html 200`,
+    `${page.path}/ ${page.path}/index.html 200`,
+  ]),
+  "/privacy /index.html 200",
+  "/ochrana-osobnych-udajov /index.html 200",
+  "/* /index.html 200",
+  "",
+].join("\n")
+fs.writeFileSync(path.join(root, "public", "_redirects"), redirects)
 
 if (!process.argv.includes("--dist")) {
   console.log(`SEO_SOURCE_OK pages=${seo.pages.length} sitemap=public/sitemap.xml`)
@@ -46,4 +58,5 @@ for (const page of seo.pages) {
 }
 fs.copyFileSync(path.join(root, "public", "sitemap.xml"), path.join(dist, "sitemap.xml"))
 fs.copyFileSync(path.join(root, "public", "robots.txt"), path.join(dist, "robots.txt"))
+fs.copyFileSync(path.join(root, "public", "_redirects"), path.join(dist, "_redirects"))
 console.log(`SEO_PRERENDER_OK pages=${seo.pages.length} sitemap=dist/sitemap.xml`)

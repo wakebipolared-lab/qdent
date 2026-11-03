@@ -6,6 +6,7 @@ const seo = JSON.parse(fs.readFileSync(path.join(root, "src", "seo-content.json"
 const failures = []
 const titles = new Set()
 const descriptions = new Set()
+const redirects = fs.readFileSync(path.join(root, "dist", "_redirects"), "utf8")
 
 for (const page of seo.pages) {
   if (!page.path.startsWith(`/${page.locale}`)) failures.push(`${page.path}: locale prefix mismatch`)
@@ -24,6 +25,9 @@ for (const page of seo.pages) {
       if (!html.includes(needle)) failures.push(`${page.path}: missing ${needle}`)
     }
   }
+  if (!redirects.includes(`${page.path} ${page.path}/index.html 200`)) failures.push(`${page.path}: missing direct prerender rewrite`)
+  if (!redirects.includes(`${page.path}/ ${page.path}/index.html 200`)) failures.push(`${page.path}: missing trailing-slash prerender rewrite`)
+  if (redirects.includes(`${page.path} /index.html 200`)) failures.push(`${page.path}: prerender shadowed by generic SPA rewrite`)
 }
 const sitemap = fs.readFileSync(path.join(root, "dist", "sitemap.xml"), "utf8")
 for (const page of seo.pages) if (!sitemap.includes(`<loc>${seo.siteUrl}${page.path}</loc>`)) failures.push(`${page.path}: absent from sitemap`)
@@ -31,4 +35,9 @@ if (failures.length) {
   console.error(failures.join("\n"))
   process.exit(1)
 }
-console.log(`SEO_CHECK_OK pages=${seo.pages.length} languages=5 unique_titles=${titles.size} unique_descriptions=${descriptions.size} canonicals=${seo.pages.length} sitemap_urls=${seo.pages.length}`)
+const htmlCount = fs.readdirSync(path.join(root, "dist"), { recursive: true }).filter((entry) => String(entry).endsWith("index.html")).length
+if (htmlCount !== seo.pages.length + 1) {
+  console.error(`Expected ${seo.pages.length + 1} HTML documents, found ${htmlCount}`)
+  process.exit(1)
+}
+console.log(`SEO_CHECK_OK pages=${seo.pages.length} languages=5 unique_titles=${titles.size} unique_descriptions=${descriptions.size} canonicals=${seo.pages.length} sitemap_urls=${seo.pages.length} html_documents=${htmlCount} direct_route_rewrites=${seo.pages.length * 2}`)

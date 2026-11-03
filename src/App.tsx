@@ -1370,7 +1370,7 @@ function AppointmentSection() {
           phone: form.phone.trim(),
           email: form.email.trim(),
           preferredDate: form.date,
-          service: form.service,
+          service: t(form.service),
           note: form.note.trim(),
           source: "Qdent website",
         }),
@@ -1542,7 +1542,7 @@ function AppointmentSection() {
                     <SelectContent>
                       {SERVICE_OPTIONS.map((s) => (
                         <SelectItem key={s} value={s}>
-                          {s}
+                          {t(s)}
                         </SelectItem>
                       ))}
                     </SelectContent>
