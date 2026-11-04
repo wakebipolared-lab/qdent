@@ -7,6 +7,7 @@ const richContent = JSON.parse(fs.readFileSync(path.join(root, "src", "seo-rich-
 const xmlEscape = (value) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;")
 const htmlEscape = xmlEscape
 const publicPath = (pagePath) => `${pagePath}/`
+const prerenderGuard = `<style id="qdent-prerender-guard">html,body{margin:0;min-height:100%;background:#f7faf9}[data-prerendered-seo]{visibility:hidden}</style><noscript><style>[data-prerendered-seo]{visibility:visible!important}</style></noscript>`
 
 const alternatesFor = (page) => seo.pages
   .filter((candidate) => candidate.kind === page.kind && candidate.key === page.key)
@@ -56,7 +57,7 @@ for (const page of seo.pages) {
     .replace(/<html lang="[^"]*">/, `<html lang="${page.locale === "ukr" ? "uk" : page.locale}">`)
     .replace(/<title>.*?<\/title>/, `<title>${htmlEscape(page.title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${htmlEscape(page.description)}">`)
-    .replace("</head>", `<link rel="canonical" href="${seo.siteUrl}${publicPath(page.path)}">${alternates}<link rel="alternate" hreflang="x-default" href="${seo.siteUrl}${publicPath(defaultPage?.path ?? "/sk")}"><meta property="og:title" content="${htmlEscape(page.title)}"><meta property="og:description" content="${htmlEscape(page.description)}"><meta property="og:url" content="${seo.siteUrl}${publicPath(page.path)}"><meta property="og:type" content="${page.kind === "profile" ? "profile" : "website"}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${htmlEscape(page.title)}"><meta name="twitter:description" content="${htmlEscape(page.description)}"><script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script></head>`)
+    .replace("</head>", `${prerenderGuard}<link rel="canonical" href="${seo.siteUrl}${publicPath(page.path)}">${alternates}<link rel="alternate" hreflang="x-default" href="${seo.siteUrl}${publicPath(defaultPage?.path ?? "/sk")}"><meta property="og:title" content="${htmlEscape(page.title)}"><meta property="og:description" content="${htmlEscape(page.description)}"><meta property="og:url" content="${seo.siteUrl}${publicPath(page.path)}"><meta property="og:type" content="${page.kind === "profile" ? "profile" : "website"}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${htmlEscape(page.title)}"><meta name="twitter:description" content="${htmlEscape(page.description)}"><script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script></head>`)
     .replace('<div id="root"></div>', `<div id="root">${content}</div>`)
   const target = path.join(dist, page.path.slice(1), "index.html")
   fs.mkdirSync(path.dirname(target), { recursive: true })
