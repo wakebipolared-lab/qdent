@@ -280,6 +280,7 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Лиза",
+    profileKey: "elizaveta-yashchenko",
     role: "Ассистент",
     description: "Помогает врачу и сопровождает пациента на всех этапах лечения.",
     image: "/assets/vlada-hq.webp",
